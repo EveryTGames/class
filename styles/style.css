@@ -1,31 +1,255 @@
-h1, h2{
- text-align: center;
- 
-  
+:root {
+	color-scheme: light;
+	--ink: #203047;
+	--muted: #64748b;
+	--primary: #176b70;
+	--primary-dark: #105257;
+	--surface: #ffffff;
+	--background: #f4f7f8;
+	--border: #dce5e8;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 32px 24px;
+	color: var(--ink);
+	background: var(--background);
+	font-family: "Segoe UI", Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.65;
+}
+
+h1,
+h2,
+h3 {
+	color: var(--ink);
+	line-height: 1.25;
+}
+
+h1,
+h2 {
+	text-align: center;
+}
+
+h1 {
+	margin: 24px 0;
+	font-size: clamp(2rem, 5vw, 3rem);
+}
+
+h2 {
+	margin-top: 40px;
+	font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+p {
+	max-width: 760px;
+	margin: 12px auto 24px;
+	color: var(--muted);
 }
 
 a {
- 
- text-decoration: none;
- 
+	color: var(--primary);
+	text-decoration: none;
+	transition: color 160ms ease, background-color 160ms ease;
 }
 
-ul {
- display: flex;
- list-style: none;
- gap: 30px
+a:hover {
+	color: var(--primary-dark);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+	outline: 3px solid #79c5c6;
+	outline-offset: 3px;
 }
 
 #main {
- text-align: left
+	margin: 0 0 20px;
+	text-align: center;
+	color: var(--primary-dark);
+}
+
+#nav {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px;
+	margin: 0;
+	padding: 12px;
+	list-style: none;
+	background: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: 14px;
+	box-shadow: 0 8px 24px rgb(32 48 71 / 6%);
+}
+
+#nav br {
+	display: none;
 }
 
 #nav li {
- border: 2px solid black;
-padding: 10px; 
+	padding: 8px 14px;
+	border: 0;
+	border-radius: 8px;
+	color: var(--primary-dark);
+	font-weight: 600;
+}
+
+#nav li:hover {
+	background: #eaf5f4;
+}
+
+body > div {
+	margin: 28px 0;
+	text-align: center;
 }
 
 #img {
- height:100%;
- align-self: center;
+	display: block;
+	width: min(100%, 900px);
+	max-height: 460px;
+	margin: 24px auto;
+	object-fit: cover;
+	border-radius: 16px;
+	box-shadow: 0 12px 30px rgb(32 48 71 / 12%);
+}
+
+hr {
+	height: 1px;
+	margin: 32px 0;
+	border: 0;
+	background: var(--border);
+}
+
+mark {
+	padding: 0 4px;
+	color: var(--primary-dark);
+	background: #dff2ed;
+	border-radius: 3px;
+}
+
+table {
+	width: min(100%, 720px);
+	margin: 24px auto;
+	overflow: hidden;
+	border-collapse: collapse;
+	background: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: 12px;
+	box-shadow: 0 8px 24px rgb(32 48 71 / 6%);
+}
+
+th,
+td {
+	padding: 14px 18px;
+	text-align: left;
+	border-bottom: 1px solid var(--border);
+}
+
+th {
+	color: #fff;
+	background: var(--primary);
+}
+
+tr:last-child td {
+	border-bottom: 0;
+}
+
+form {
+	width: min(100%, 620px);
+	margin: 24px auto;
+	padding: 24px;
+	background: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: 14px;
+	box-shadow: 0 8px 24px rgb(32 48 71 / 6%);
+}
+
+label {
+	display: inline-block;
+	margin: 8px 6px 6px 0;
+	color: var(--ink);
+	font-weight: 600;
+}
+
+input:not([type="radio"]):not([type="submit"]):not([type="reset"]),
+textarea,
+select {
+	width: 100%;
+	margin: 4px 0 12px;
+	padding: 10px 12px;
+	color: var(--ink);
+	background: #fff;
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	font: inherit;
+}
+
+input[type="radio"] {
+	accent-color: var(--primary);
+}
+
+input[type="submit"],
+input[type="reset"],
+.main-button a {
+	display: inline-block;
+	margin: 6px 6px 6px 0;
+	padding: 10px 18px;
+	color: #fff;
+	background: var(--primary);
+	border: 0;
+	border-radius: 8px;
+	font: inherit;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+.main-button a:hover {
+	color: #fff;
+	background: var(--primary-dark);
+}
+
+.main-button {
+	text-align: center;
+}
+
+small {
+	display: block;
+	padding: 16px 0;
+	color: var(--muted);
+	text-align: center;
+}
+
+@media (max-width: 600px) {
+	body {
+		padding: 20px 14px;
+	}
+
+	#nav {
+		gap: 4px;
+		padding: 8px;
+	}
+
+	#nav li {
+		padding: 7px 10px;
+	}
+
+	form {
+		padding: 18px;
+	}
+
+	th,
+	td {
+		padding: 10px;
+	}
 }
