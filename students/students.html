@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>students portal</title>
+</head>
+<body>
+  <h1>
+    Students portal
+  </h1>
+  
+  <div class="main-button">
+    <a href="login.html">Login</a>
+  </div>
+  <br><br><br>
+  <div class="main-button">
+    <a href="signup.html">SignUp</a>
+  </div>
+  
+  
+  <hr>
+  <div>
+    <form action="/edit" method="POST"     >
+    <label for="name">
+      Name
+    </label>
+      <input type="text" id="name" minlength=3 maxlength=20>
+      <br>
+      <br>
+      
+      <label for="gender">
+        gender
+      </label>
+      <br>
+                               
+      <label for="gender">male</label>
+      <input type="radio" id="gender" name="gender" value="male">
+      
+            
+      <label for="gender">female</label>
+      <input type="radio" id="gender" name="gender" value="female">
+      
+      
+      <br>
+      <label for="birth"> date of birth</label>
+      <input type="date" id="birth" min="2015-01-01" max="2025-01-01">
+      
+      <br>
+      <br>
+      
+      <label for="desc"> Bio </label>
+      <br>
+      <textarea maxlength=500 id="desc" name="desc" cols=80 rows=10> </textarea>
+      
+      <br><br>
+      <label for="grade">select ur grade </label>
+      <select id="grade" >
+        <option value="1" > 1 </option>
+        <option value="2" > 2 </option>
+        <option value="3" > 3 </option>
+        <option value="4" > 4 </option>
+        <option value="5" > 5 </option>
+        <option value="6" > 6 </option>
+        <option value="7" > 7 </option>
+      </select>
+      <br><br>
+      <input type="submit" value="save">
+      
+      <input type="reset" value="reset">
+  </form>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+</body>
+</html>
